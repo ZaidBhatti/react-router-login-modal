@@ -19,7 +19,8 @@ const LoginPage = () => {
         initialValue: '',
         validate: (value) => value === 'username'
     });
-    const {value: password, pristine: passwordPristine, valid: validPassword, validate: validatePassword, bind: bindPassword, reset: resetPassword} = useInput();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const {value: password, pristine: passwordPristine, valid: validPassword, validate: validatePassword, bind: bindPassword, reset: resetPassword} = useInput({});
 
     const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -30,8 +31,6 @@ const LoginPage = () => {
         if (!validForm) {
             return alert('errors');
         }
-
-        console.log('all good');
     };
 
     return (

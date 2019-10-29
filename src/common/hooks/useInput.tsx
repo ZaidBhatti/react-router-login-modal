@@ -1,12 +1,11 @@
 import {ChangeEvent, useState} from 'react';
 
 type InputProps = {
-    initialValue: string;
-    validate: (value: string) => boolean;
+    initialValue?: string;
+    validate?: (value: string) => boolean;
 };
 
-const useInput = (input?: InputProps) => {
-    const {initialValue = '', validate = (value: string) => true}: InputProps = input;
+const useInput = ({ initialValue  = '', validate = (value: string) => true }: InputProps) => {
     const [value, setValue] = useState(initialValue);
     const [valid, setValid] = useState(true);
     const [pristine, setPristine] = useState(true);
